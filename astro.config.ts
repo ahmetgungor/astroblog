@@ -10,6 +10,7 @@ import {
 } from "@shikijs/transformers";
 import { transformerFileName } from "./src/utils/transformers/fileName";
 import { SITE } from "./src/config";
+import VitePWA from "@vite-pwa/astro";
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,6 +18,39 @@ export default defineConfig({
   integrations: [
     sitemap({
       filter: page => SITE.showArchives || !page.endsWith("/archives"),
+    }),
+    VitePWA({
+      registerType: 'autoUpdate',
+      devOptions: {
+        enabled: true, // geliştirme modunda test için
+      },
+      manifest: {
+        name: 'Ahmet Güngör Blog',
+        short_name: 'ahmetgungor',
+        description: 'Kişisel Blog - Ahmet Güngör',
+        theme_color: '#ffffff',
+        background_color: '#ffffff',
+        display: 'standalone',
+        start_url: '/',
+        icons: [
+          {
+            src: 'pwa-192x192.png',
+            sizes: '192x192',
+            type: 'image/png',
+          },
+          {
+            src: 'pwa-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+          },
+          {
+            src: 'pwa-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'any maskable',
+          },
+        ],
+      },
     }),
   ],
   markdown: {

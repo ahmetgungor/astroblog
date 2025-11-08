@@ -70,17 +70,17 @@ const isActive = (path: string) => {
         >
           <li class="col-span-2">
             <a href="/posts" class:list={{ "active-nav": isActive("/posts") }}>
-              Posts
+              Gönderiler
             </a>
           </li>
           <li class="col-span-2">
             <a href="/tags" class:list={{ "active-nav": isActive("/tags") }}>
-              Tags
+              Etiketler
             </a>
           </li>
           <li class="col-span-2">
             <a href="/about" class:list={{ "active-nav": isActive("/about") }}>
-              About
+              Hakkımda
             </a>
           </li>
           {
@@ -95,10 +95,10 @@ const isActive = (path: string) => {
                     },
                   ]}
                   ariaLabel="archives"
-                  title="Archives"
+                  title="Arşiv"
                 >
                   <IconArchive class="hidden sm:inline-block" />
-                  <span class="sm:sr-only">Archives</span>
+                  <span class="sm:sr-only">Arşiv</span>
                 </LinkButton>
               </li>
             )
@@ -111,10 +111,10 @@ const isActive = (path: string) => {
                 { "[&>svg]:stroke-accent": isActive("/search") },
               ]}
               ariaLabel="search"
-              title="Search"
+              title="Site İçi Arama"
             >
               <IconSearch />
-              <span class="sr-only">Search</span>
+              <span class="sr-only">Site İçi Arama</span>
             </LinkButton>
           </li>
           {
